@@ -1,0 +1,7 @@
+streamlit
+pandas
+yfinance
+bs4 
+datetime
+plotly
+lxml
