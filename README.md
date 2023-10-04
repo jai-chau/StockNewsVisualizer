@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README</title>
-</head>
-
-<body>
-
     <h1>StockNewsVisualizer</h1>
 
     <p>
@@ -55,7 +44,3 @@
     <footer>
         <p>&copy; 2023 StockNewsVisualizer | All Rights Reserved.</p>
     </footer>
-
-</body>
-
-</html>
