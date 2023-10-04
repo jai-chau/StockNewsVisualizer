@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import streamlit as st
 import yfinance as yf
 import plotly.graph_objects as go
-from datetime import datetime
+from datetime import datetime, date
 
 # Streamlit app title
 st.set_page_config(layout="wide")
@@ -27,10 +27,15 @@ def newsArticle(ticker):
     links = []
     times = []
     last_date = None  # Used to store the last encountered date
+
     for row in rows:
         title = row.select_one('.tab-link-news').get_text()
         link = row.select_one('.tab-link-news')['href']
         time = row.select_one('td[width="130"]').get_text().strip()
+
+        # Handle the "Today" case
+        if time.startswith("Today"):
+            time = date.today().strftime('%b-%d-%y') + ' ' + time.split(" ")[1]
 
         # Check if the time string contains a date
         if len(time.split()) > 1:
@@ -46,17 +51,16 @@ def newsArticle(ticker):
         "Release Time": times,
         "Article Name": titles,
         "Article Link": links
-    })    
-
+    })
 
 if ticker:
     data = newsArticle(ticker)
 
     # Displaying data in a table with column names
     st.table(data.head(topNum))
-    
+
     # Fetch stock price data
-    stock_data = yf.download(ticker, start="2023-01-01", end="2023-12-31") 
+    stock_data = yf.download(ticker, start="2023-01-01", end="2023-12-31")
 
     # Create figure with stock price data
     fig = go.Figure()
