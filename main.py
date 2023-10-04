@@ -87,7 +87,7 @@ if ticker:
                             name='News Date'))
 
     fig.update_traces(hoverinfo="text")
-    fig.update_layout(title=f"Stock Price and News Articles for {ticker}",
+    fig.update_layout(title=f"Stock Price and News Articles for {ticker.upper()}",
                     xaxis_title="Date",
                     yaxis_title="Stock Price",
                     hovermode="closest")
