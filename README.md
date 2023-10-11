@@ -31,16 +31,3 @@
 
 <h2>Usage</h2>
     <p>Input a stock ticker and select the number of news articles you want to display. The application will fetch the stock price data and relevant news articles, and then visualize them on a chart.</p>
-
-<h2>Contributions</h2>
-    <p>Contributions, bug reports, and improvements are welcome! Please open an issue or submit a pull request.</p>
-
-<h2>License</h2>
-    <p>This project is open-source and available under the [Your License].</p>
-
-<h2>Acknowledgments</h2>
-    <p>Special thanks to Finviz for providing the news data and YFinance for stock price data.</p>
-
-<footer>
-        <p>&copy; 2023 StockNewsVisualizer | All Rights Reserved.</p>
-    </footer>
